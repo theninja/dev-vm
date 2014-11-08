@@ -1,0 +1,16 @@
+#!/bin/sh
+
+FUNCTION="$@"
+
+remount()
+{
+	vagrant ssh -- -t '(sudo mount -o remount /vagrant && echo "Successfully remounted drive!") || echo "Failed to remount drive :("; exit;'
+}
+
+log()
+{
+	vagrant ssh -- -t 'sudo tail -f /var/log/apache2/error.log'
+}
+
+# run function
+${FUNCTION}

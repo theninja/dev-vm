@@ -1,0 +1,5 @@
+[user]
+	name = {GITNAME}
+	email = {GITEMAIL}
+[color]
+	ui = true
